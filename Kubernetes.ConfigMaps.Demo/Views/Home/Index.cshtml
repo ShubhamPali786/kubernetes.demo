@@ -1,8 +1,10 @@
 ﻿@using Microsoft.Extensions.Configuration
+@using System.Text;
 @inject IConfiguration Configuration
 
 @{
     ViewData["Title"] = "Home Page";
+    var dbpassword = string.IsNullOrEmpty(Configuration["dbpassword"]) ? string.Empty : Encoding.UTF8.GetString(Convert.FromBase64String(Configuration["dbpassword"]));
 }
 
 <div class="text-center">

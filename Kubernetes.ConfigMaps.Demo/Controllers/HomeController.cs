@@ -20,6 +20,7 @@ namespace Kubernetes.ConfigMaps.Demo.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("Home is called");
             return View();
         }
 
